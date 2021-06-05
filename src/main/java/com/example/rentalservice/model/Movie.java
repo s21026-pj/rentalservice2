@@ -1,19 +1,20 @@
 package com.example.rentalservice.model;
 
-public class movie {
+public class Movie {
     private Long MovieID;
     private String name;
     private Category category;
     private boolean isAvailable=false;
 
+    public Movie() {
+    }
 
-
-    public movie(String name, Category category) {
+    public Movie(String name, Category category) {
         this.name = name;
         this.category = category;
     }
 
-    public movie(Long MovieID, String name, Category category) {
+    public Movie(Long MovieID, String name, Category category) {
         this.MovieID = MovieID;
         this.name = name;
         this.category = category;
