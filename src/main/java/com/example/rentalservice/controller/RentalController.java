@@ -18,6 +18,11 @@ public class RentalController {
 
     @GetMapping("/getmovie/{id}")
     public ResponseEntity<Movie> getMovie(@PathVariable int id){
-        return ResponseEntity.ok(movieService.getMovie(id));
+        return movieService.getMovie(id);
+    }
+
+    @GetMapping("/returnmovie/{id}")
+    public ResponseEntity<Movie> returnMovie(@PathVariable int id){
+        return movieService.returnMovie(id);
     }
 }

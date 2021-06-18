@@ -4,7 +4,7 @@ public class Movie {
     private Long MovieID;
     private String name;
     private Category category;
-    private boolean isAvailable=false;
+
 
     public Movie() {
     }
@@ -44,11 +44,5 @@ public class Movie {
         this.category = category;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
 }
