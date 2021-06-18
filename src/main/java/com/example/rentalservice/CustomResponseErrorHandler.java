@@ -21,7 +21,7 @@ public class CustomResponseErrorHandler implements ResponseErrorHandler {
     @Override
     public void handleError(ClientHttpResponse clientHttpResponse) throws IOException {
         HttpStatus status = clientHttpResponse.getStatusCode();
-        switch (status){
+        switch (status) {
             case NOT_FOUND:
                 throw new NotFoundException();
             case BAD_REQUEST:
@@ -36,7 +36,7 @@ public class CustomResponseErrorHandler implements ResponseErrorHandler {
     @Override
     public void handleError(URI url, HttpMethod method, ClientHttpResponse clientHttpResponse) throws IOException {
         HttpStatus status = clientHttpResponse.getStatusCode();
-        switch (status){
+        switch (status) {
             case NOT_FOUND:
                 throw new NotFoundException();
             case BAD_REQUEST:
@@ -49,19 +49,20 @@ public class CustomResponseErrorHandler implements ResponseErrorHandler {
     }
 
 
-
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    static class NotFoundException extends IOException { }
+    static class NotFoundException extends IOException {
+    }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    static class BadRequestException extends IOException { }
+    static class BadRequestException extends IOException {
+    }
 
     @ResponseStatus(HttpStatus.BAD_GATEWAY)
-    static class BadGatewayException extends IOException { }
+    static class BadGatewayException extends IOException {
+    }
 
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    static class ForbiddenException extends IOException { }
-
-    @ResponseStatus(HttpStatus.GATEWAY_TIMEOUT)
-    static class GatewayException extends RuntimeException { }
+    static class ForbiddenException extends IOException {
     }
+
+}
