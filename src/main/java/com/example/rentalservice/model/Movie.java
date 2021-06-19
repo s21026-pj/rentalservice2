@@ -1,6 +1,11 @@
 package com.example.rentalservice.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel("Movie data")
 public class Movie {
+    @ApiModelProperty("unique ID of movie")
     private Long MovieID;
     private String name;
     private Category category;
